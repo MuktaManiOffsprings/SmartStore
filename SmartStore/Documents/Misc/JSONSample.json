@@ -1,0 +1,12 @@
+{
+	"EmployeeId": 1,
+	"Name": "Satya",
+	"DOB": "02-May-1977",
+	"Married": false,
+	"Skillset": ["Fitter", "Plumber", "Electrician"],
+	"Department": {
+		"DepartmentId": 1,
+		"Name": "Mathematics"
+	}
+}
+
