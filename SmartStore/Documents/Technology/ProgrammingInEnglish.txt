@@ -1,0 +1,50 @@
+How is the weather today?
+	Sunny
+	Rainy
+	Cold
+	Cloudy
+	Pleasant
+	
+Is the weather sunny today?
+	Yes
+	No
+
+What is your eldest sister's Name? 
+	'Prakrut' 
+	'Priyanka'
+	'Nikita'
+	'Ankita'
+	'Arpita'
+	'Shaina'
+	
+
+Assignment 
+Conditional Statement
+
+Check wheather Prakrut is the eledest sister of Chandan : Conditional Statement
+
+managerName = Priyanka
+Write managerName
+ans = WhatIsYourManagersName()
+ans = managerName?
+
+
+placeholder
+	can change its value : i.e. the value of the placeholder can change from time to time : variable 
+	cannot change its value : constant
+value
+statement
+	creation 
+	assignment 
+	evaluation 
+	execution
+	repeat
+		indeterministic (You don't know before hand : at least once)
+			do once and then check. do check : do check : do check
+			check and then do : check and then do : check and then do
+		deterministic    (You know before hand)
+	
+method (Set of statements working together)
+	one that return value(s) : function
+	one that does not return a value : procedure
+	
