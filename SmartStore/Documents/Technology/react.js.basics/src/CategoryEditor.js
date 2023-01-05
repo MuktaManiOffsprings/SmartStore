@@ -1,4 +1,7 @@
 import React from 'react';
+import axios from 'axios';
+
+const url = 'http://localhost:3001/category/add';
 
 class CategoryEditor extends React.Component {
     category = {
@@ -19,6 +22,13 @@ class CategoryEditor extends React.Component {
 
     onSaveClickHandler = () => {
         console.log(this.category);
+        axios.post(url, this.category)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
     render() {

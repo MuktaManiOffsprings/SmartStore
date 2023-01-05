@@ -4,17 +4,14 @@ const url = 'mongodb://localhost:27017';
 const db_name = 'ss';
 const collection_name = 'Category';
 
-function add(){
+function add(category){
     console.log('inserting');
     const client = new mongoClient(url);
     const db = client.db(db_name);
     const collection = db.collection(collection_name);
     client.connect();
 
-    collection.insertOne({
-     category_id: 1,
-     category_name: 'Cola'
-    });
+    collection.insertOne(category);
     console.log('inserted');
 }
  
