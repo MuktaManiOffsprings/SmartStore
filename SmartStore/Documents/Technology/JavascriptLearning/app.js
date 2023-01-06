@@ -1,11 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 
+
 const categoryRouter = require('./category-router');
 
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 app.listen(3001,()=>{
 console.log('Server listening on port 3001');
