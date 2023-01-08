@@ -5,8 +5,9 @@ const url = 'http://localhost:3001/category/add';
 
 class CategoryEditor extends React.Component {
     category = {
-        name: "",
-        description: ""
+        CATEGORYID: "",
+        CATEGORYNAME: "",
+        CATEGORYDESCRIPTION: ""
     };
 
     state = {
@@ -36,20 +37,29 @@ class CategoryEditor extends React.Component {
             <div>
                 <form>
                     <div>
-                        <span>Category Name</span>
+                        <span>CATEGORYID</span>
                         <input
                             type="text"
-                            name="name"
-                            value={this.state.category.name}
+                            name="CATEGORYID"
+                            value={this.state.category.CATEGORYID}
                             onChange={this.categoryAttributeChangeHandler}
                         />
                     </div>
                     <div>
-                        <span>Description</span>
+                        <span>CATEGORYNAME</span>
                         <input
                             type="text"
-                            name="description"
-                            value={this.state.category.description}
+                            name="CATEGORYNAME"
+                            value={this.state.category.CATEGORYNAME}
+                            onChange={this.categoryAttributeChangeHandler}
+                        />
+                    </div>
+                    <div>
+                        <span>CATEGORYDESCRIPTION</span>
+                        <input
+                            type="text"
+                            name="CATEGORYDESCRIPTION"
+                            value={this.state.category.CATEGORYDESCRIPTION}
                             onChange={this.categoryAttributeChangeHandler}
                         />
                     </div>
