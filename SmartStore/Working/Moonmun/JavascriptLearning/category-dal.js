@@ -1,18 +1,18 @@
 const mongoClient = require('mongodb').MongoClient;
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb+srv://moonmun:Mo0nmunsen@cluster0.hgvhk4t.mongodb.net/test';
 const db_name = 'ss';
 const collection_name = 'Category';
 
-function add(category){
-    console.log('inserting');
+async function add(category){
+    console.log('category');
     const client = new mongoClient(url);
     const db = client.db(db_name);
     const collection = db.collection(collection_name);
     client.connect();
 
-    collection.insertOne(category);
-    console.log('inserted');
+    await collection.insertOne(category);
+    client.close();
 }
  
 module.exports = {
