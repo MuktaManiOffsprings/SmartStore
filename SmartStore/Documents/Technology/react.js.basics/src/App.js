@@ -1,5 +1,8 @@
 import './App.css';
 import CategoryEditor from './CategoryEditor';
+import React from 'react';
+
+//const categoryDal = require ('C:\Users\Lenovo\Documents\GitHub\MMO\SmartStore\Documents\Technology\JavascriptLearning\category-dal.js');
 
 function App() {
     return (
@@ -11,4 +14,7 @@ function App() {
     );
 }
 
-export default App;
+
+export function App() {}
+
+

@@ -1,10 +1,16 @@
 const categoryDal = require('./category-dal');
 
-function add(category){
-   console.log('Add method in bl');
-   categoryDal.add(category);
+async function add(category) {
+    await categoryDal.add(category);
+}
+
+async function getList() {
+    let data = await categoryDal.getList();
+    
+    return data;
 }
 
 module.exports = {
-    add: add
+    add: add,
+    getList: getList
 };
