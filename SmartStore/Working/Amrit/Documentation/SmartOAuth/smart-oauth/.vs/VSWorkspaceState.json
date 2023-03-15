@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\jwt",
+    "\\local-auth",
+    "\\routes"
+  ],
+  "SelectedNode": "\\jwt\\jwtAuthServer.js",
+  "PreviewInSolutionExplorer": false
+}
