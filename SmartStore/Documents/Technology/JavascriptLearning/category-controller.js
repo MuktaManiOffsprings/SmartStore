@@ -1,13 +1,19 @@
 const categoryBl = require('./category-bl');
 
-function add(req, res) {
-    console.log(req.body);
-    console.log("Hello recieved request");
-    categoryBl.add(req.body);
-    res.send('to do');
- }
+async function add(req, res) {
+    await categoryBl.add(req.body)
+    let data = await categoryBl.getList();
+    res.send(data);
+}
 
+/*async function getList(req, res) {
+    let data = await categoryBl.getList();
+    console.log('Logging in Controller');
+    console.log(data);
+    res.send(data);
+}*/
 
 module.exports = {
-    add: add
+    add: add,
+    //getList: getList
  };

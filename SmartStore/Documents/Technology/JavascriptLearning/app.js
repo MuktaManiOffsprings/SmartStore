@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 
-
 const categoryRouter = require('./category-router');
 
 const app = express();

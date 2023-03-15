@@ -1,44 +1,53 @@
 const mongoClient = require('mongodb').MongoClient;
 
-const url = 'mongodb://localhost:27017';
-//const db_name = 'ss';
-//const collection_name = 'Category';
-
+//const uri = 'mongodb+srv://amrit:amritdhal@cluster0.fwicdfm.mongodb.net/test';
+const uri = 'mongodb+srv://pinky:pinky@cluster0.sazhefh.mongodb.net/test';
 const db_name = 'SmartStore';
 const collection_name = 'Category';
 
-function add(category){
-    console.log('inserting');
-    const client = new mongoClient(url);
-    //const db = client.db(db_name);
-    //const collection = db.collection(collection_name);
-    //client.connect();
-    //collection.insertOne(category);
-    //console.log('inserted');
+async function add(category) {
+    console.log(category);
+    console.log('Adding to DB');
 
-    client.connect()
-        .then(() => {
-            console.log('Successfully connected to MongoDB server');
+    //setup connection to mongodb
+    //const client = new mongoClient(uri, { useNewUrlParser: true });
+    const client = new mongoClient(uri);
+    const db = client.db(db_name);
+    const collection = db.collection(collection_name);
+    client.connect();
 
-            const db = client.db(db_name);
-            const collection = db.collection(collection_name);
+    console.log('Processing');
+    await collection.insertOne(category);
 
-            collection.insertOne(category)
-                .then((result) => {
-                    console.log(`Successfully inserted document: ${result.insertedId}`);
-                })
-                .catch((error) => {
-                    console.log("Error Insterting");
-                    console.error(error);
-                });
-        })
-        .catch((error) => {
-            console.log("Error Connecting");
-            console.error(error);
-        });
-
+    client.close();
 }
- 
+
+async function getList() {
+    console.log('GetList of all Categories');
+
+    //setup connection to mongodb
+    const client = new mongoClient(uri);
+    const db = client.db(db_name);
+    const collection = db.collection(collection_name);
+    try {
+        await client.connect();
+
+        let data = await collection.find({}).toArray();
+
+        console.log('data: ');
+        console.log(data);
+        console.log('Finished');
+        return data;
+    }
+    catch (err) {
+        console.log('Error: ' + err);
+    }
+    finally {
+        client.close();
+    }
+}
+
 module.exports = {
-  add: add
+    add: add,
+    getList: getList
 };
